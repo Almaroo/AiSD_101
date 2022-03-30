@@ -17,7 +17,7 @@ public static class Benchmark
         foreach (var variant in variants)
         {
             Console.Write($"* {variant.name}: ");
-            var times = MeasureTime(variant.action, (T[]) array.Clone(), repeatTimes);
+            var times = MeasureTime(variant.action, array, repeatTimes);
 
             var average = times.Average(x => x.TotalSeconds);
             var stDev = CalculateStdDeviation(times.Select(x => x.TotalSeconds));
@@ -34,7 +34,7 @@ public static class Benchmark
         for (var i = 0; i < repeatTimes; i++)
         {
             Stopwatch.Restart();
-            variantAction(array);
+            variantAction((T[])array.Clone());
             Stopwatch.Stop();
 
             timeResults[i] = Stopwatch.Elapsed;
