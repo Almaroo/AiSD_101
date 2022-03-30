@@ -26,11 +26,11 @@ public static class Generators
         return array;
     }
 
-    public static int[] GenerateAlmostSorted(int size, int minVal, int maxVal, int countOutOfOrder)
+    public static int[] GenerateAlmostSorted(int size, int minVal, int maxVal, int percentOutOfOrder)
     {
         var array = GenerateSorted(size, minVal, maxVal);
 
-        for (var i = 0; i < countOutOfOrder; i++)
+        for (var i = 0; i < percentOutOfOrder * size / 100; i++)
         {
             int idxFrom, idxTo;
             
