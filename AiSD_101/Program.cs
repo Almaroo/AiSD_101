@@ -3,8 +3,8 @@
 using AiSD_101;
 using AiSD_101.Algorithms.Sorting;
 
-const int small = 100;
-const int medium = 1_000;
+const int small = 1_000;
+const int medium = 10_000;
 const int large = 100_000;
 
 
